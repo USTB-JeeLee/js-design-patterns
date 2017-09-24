@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vuejs双向数据绑定底层原理实现</title>
+   
+  </head>
+  <body>
+    <input type="text" id="userName">
+    <br>
+    <span id="uName"></span>
+
+    <script type="text/javascript">
+    	var obj = {
+    		pwd : '123456'
+    	} ;
+    	Object.defineProperty(obj,"userName",{
+    		get: function() {
+    			console.log("get init");
+    		},
+    		set: function(val) {
+    			console.log("set init");
+    			document.getElementById("uName").innerHTML = val;
+    			document.getElementById("userName").value = val;
+    		}
+    	});
+    	document.getElementById("userName").addEventListener("keyup",function(event) {
+    		obj.userName = event.target.value
+    	})
+    </script>
+  </body>
+
+</html>

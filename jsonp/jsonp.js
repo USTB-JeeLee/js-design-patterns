@@ -1,3 +1,4 @@
+//JSONP实现原理
 <script>
 	window.callback = function(data) {
 		//这是我们跨域得到的信息
