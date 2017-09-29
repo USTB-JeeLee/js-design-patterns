@@ -32,3 +32,9 @@ function show2(arr,randomNum) {
 	}
 }
 console.log(show2(arr,randomNum))
+
+//打乱顺序
+var arr = [1,2,3,4,5,6,7,8,9];
+console.log(arr.sort(function() {
+	return Math.random() - 0.5
+}))
