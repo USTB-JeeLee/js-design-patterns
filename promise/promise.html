@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>高度自适应布局</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+ <script type="text/javascript">
+ 	let checkLogin = function() {
+ 		return new Promise(function(resolve,reject) {
+ 			let flag = document.cookie.indexOf("userId") > -1 ? true : false;
+
+ 			if(flag = true) {
+ 				resolve({
+ 					status: 0,
+ 					result: true
+ 				})
+ 			}else {
+ 				reject("error");
+ 			}
+ 		})
+ 	};
+
+ 	let getUserInfo = () => {
+ 		return new Promise((resolve,reject) => {
+ 			let userInfo = {
+ 				userId: "101"
+ 			}
+ 			resolve(userInfo)
+ 		})
+ 	}
+
+
+ 	checkLogin().then(function(res) {
+ 		if(res.status == 0){
+ 			console.log("login success");
+ 			return getUserInfo();
+ 		}
+ 	}).catch((error) => {
+ 		console.log(`errors: $(error)`)
+ 	}).then((res2) => {
+ 		console.log(`userId: ${res2.userId}`)
+ 	})
+ </script>
+</div>
+</body>
+</html>
