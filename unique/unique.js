@@ -50,6 +50,25 @@ var deepCopy = function (obj) {
 }
 var arr = ['old', 1, true, ['old1', 'old2'], {old: 1}];
 var arr2 = deepCopy(arr)
-arr[0] = 'new';
 console.log(arr2)
-console.log(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
